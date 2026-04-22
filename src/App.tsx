@@ -1,25 +1,19 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import IntroEnvelope from './components/IntroEnvelope'
-import ContentEnvelope from './components/ContentEnvelope'
-import GlobalControls from './components/GlobalControls'
-import './App.css'
-
-import bgMusicUrl from './assets/mp3/Beautiful In White.mp3'
+import Content from './components/Content'
+import { WEDDING_INVITATION } from './config/wedding';
 
 function App() {
   return (
     <>
       {/* 
         Thẻ audio chạy ẩn ở mức root app giúp nhạc không bị đứt đoạn.
-        Khi file nhạc nằm trong thư mục src/assets, ta phải import file để Vite biên dịch ra đường dẫn đúng.
+        Link nhạc được cấu hình trong src/config/wedding.ts
       */}
-      <audio id="bg-music" src={bgMusicUrl} loop preload="auto" />
+      <audio id="bg-music" src={WEDDING_INVITATION.music.backgroundUrl} loop preload="auto" />
 
       <BrowserRouter>
-        <GlobalControls />
         <Routes>
-          <Route path="/" element={<IntroEnvelope />} />
-          <Route path="/content" element={<ContentEnvelope />} />
+          <Route path="/" element={<Content />} />
         </Routes>
       </BrowserRouter>
     </>

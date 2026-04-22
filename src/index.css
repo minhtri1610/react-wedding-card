@@ -1,55 +1,53 @@
-@import "tailwindcss";
+@import "./assets/css/ladipage.css";
 
-@layer components {
-  /* Hiệu ứng lá rơi */
-  @keyframes ambient-fall {
-    0% {
-      transform: translate3d(0, -50px, 0) rotate(0deg);
-      opacity: 0;
-    }
-    10% {
-      opacity: 1;
-    }
-    25% {
-      transform: translate3d(var(--sway), 25vh, 0) rotate(90deg);
-    }
-    50% {
-      transform: translate3d(calc(var(--sway) * -1), 50vh, 0) rotate(180deg);
-    }
-    75% {
-      transform: translate3d(var(--sway), 75vh, 0) rotate(270deg);
-    }
-    90% {
-      opacity: 1;
-    }
-    100% {
-      transform: translate3d(calc(var(--sway) * -1), 110vh, 0) rotate(360deg);
-      opacity: 0;
-    }
+/* Leaf fall animation for IntroEnvelope */
+@keyframes ambient-fall {
+  0% {
+    transform: translate3d(0, -50px, 0) rotate(0deg);
+    opacity: 0;
   }
-
-  /* Hiệu ứng nhịp đập con dấu */
-  @keyframes seal-pulse {
-    0%, 100% {
-      transform: scale(1);
-      box-shadow: 0 4px 20px rgba(48, 83, 15, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.8);
-    }
-    50% {
-      transform: scale(1.05);
-      box-shadow: 0 4px 25px rgba(48, 83, 15, 0.6), inset 0 2px 4px rgba(255, 255, 255, 0.5);
-    }
+  10% {
+    opacity: 1;
   }
+  25% {
+    transform: translate3d(var(--sway), 25vh, 0) rotate(90deg);
+  }
+  50% {
+    transform: translate3d(calc(var(--sway) * -1), 50vh, 0) rotate(180deg);
+  }
+  75% {
+    transform: translate3d(var(--sway), 75vh, 0) rotate(270deg);
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(calc(var(--sway) * -1), 110vh, 0) rotate(360deg);
+    opacity: 0;
+  }
+}
 
-  /* Hiệu ứng chớp sáng trên nút mởi thiệp */
-  @keyframes shine {
-    0% {
-      left: -100%;
-    }
-    20% {
-      left: 100%;
-    }
-    100% {
-      left: 100%;
-    }
+/* Seal pulse animation for IntroEnvelope */
+@keyframes seal-pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 4px 20px rgba(48, 83, 15, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.8);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 4px 25px rgba(48, 83, 15, 0.6), inset 0 2px 4px rgba(255, 255, 255, 0.5);
+  }
+}
+
+/* Shine effect on open button */
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+  20% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
   }
 }
