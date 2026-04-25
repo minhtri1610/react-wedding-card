@@ -51,7 +51,7 @@ export default function Section6() {
                     </div>
                     <div id="HEADLINE85" className="ladi-element">
                       <h3 className="ladi-headline ladi-transition">
-                        Ăn kem,chụp ảnh
+                        Chụp ảnh
                         <br />
                         với photobooth
                         <br />

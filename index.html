@@ -6,6 +6,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>wedding-card</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,regular&display=swap" rel="stylesheet" type="text/css">
+    <style id="style_ladi_animation">
+      /* Mặc định ẩn các phần tử để tránh bị nháy nội dung trước khi hiệu ứng chạy */
+      .ladi-element:not(.ladi-animation) {
+        opacity: 0;
+      }
+      /* Khi có class ladi-animation, cho phép hiển thị. 
+         Sử dụng transition như một phương án dự phòng nếu phần tử không có keyframe animation. */
+      .ladi-animation {
+        opacity: 1;
+        transition: opacity 0.5s ease;
+        animation-fill-mode: both !important;
+      }
+
+      /* Tắt hiệu ứng xoay của nhóm cũ để tránh xung đột và nháy ảnh */
+      #GROUP2.ladi-animation > .ladi-group,
+      #GROUP6.ladi-animation > .ladi-group {
+        animation-name: none !important;
+      }
+
+      /* Áp dụng trực tiếp fadeIn cho từng BOX để đảm bảo mượt mà, không bị hiện ảnh trước */
+      #BOX6.ladi-animation, 
+      #BOX7.ladi-animation, 
+      #BOX8.ladi-animation {
+        animation-name: fadeIn !important;
+        animation-duration: 1s !important;
+        animation-delay: 0.2s !important;
+      }
+
+      /* Áp dụng hiệu ứng pulse (nhịp đập) cho cả hai nút chỉ đường */
+      #HEADLINE30.ladi-animation > .ladi-headline,
+      #HEADLINE30_GIRL.ladi-animation > .ladi-headline {
+        animation-name: pulse !important;
+        animation-delay: 1s !important;
+        animation-duration: 1s !important;
+        animation-iteration-count: infinite !important;
+        font-family: TESQSSRUdVTEFSLlRURg !important;
+      }
+
+      @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+      }
+
+      /* Hiệu ứng fadeIn nhẹ nhàng cho Gallery */
+      #GALLERY1 .ladi-gallery-view-item {
+        display: block !important;
+        opacity: 0;
+        transition: opacity 0.8s ease-in-out !important;
+        position: absolute !important;
+        top: 0;
+        left: 0;
+        transform: none !important;
+        width: 100%;
+        height: 100%;
+      }
+
+      #GALLERY1 .ladi-gallery-view-item.selected {
+        opacity: 1;
+        z-index: 1;
+      }
+
+      /* Căn chỉnh lại đồng hồ đếm ngược với nhãn ở trên */
+      #COUNTDOWN1 .ladi-countdown-text {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+      }
+
+      #COUNTDOWN1 .ladi-countdown-text p {
+        margin: 0 !important;
+        line-height: 1 !important;
+        order: 1;
+      }
+
+      #COUNTDOWN1 .ladi-countdown-text span {
+        display: block !important;
+        line-height: 1.2 !important;
+        order: 2;
+      }
+    </style>
   </head>
   <body class="lazyload">
     <div id="root"></div>

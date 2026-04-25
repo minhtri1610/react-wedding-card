@@ -1,4 +1,40 @@
+import { useState } from 'react';
+import { WEDDING_INVITATION } from '../../config/wedding';
+
 export default function Section8() {
+  const [loading, setLoading] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    
+    // Add timestamp or other metadata if needed
+    formData.append('date', new Date().toLocaleString());
+
+    try {
+      await fetch(WEDDING_INVITATION.googleSheetUrl, {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors' // Google Script usually requires no-cors for simple POST
+      });
+
+      alert('Cảm ơn bạn đã xác nhận tham dự! Chúc bạn một ngày tốt lành.');
+      form.reset();
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('Có lỗi xảy ra khi gửi dữ liệu. Bạn vui lòng thử lại sau nhé!');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const groomQR = `https://img.vietqr.io/image/${WEDDING_INVITATION.groom.bank.name.toLowerCase()}-${WEDDING_INVITATION.groom.bank.number}-compact2.jpg?addInfo=Mung%20Cuoi%20Hoang%20Vy&accountName=${encodeURIComponent(WEDDING_INVITATION.groom.bank.accountName)}`;
+  const brideQR = `https://img.vietqr.io/image/vcb-${WEDDING_INVITATION.bride.bank.numberQR}-compact2.jpg?addInfo=Mung%20Cuoi%20Hoang%20Vy&accountName=${encodeURIComponent(WEDDING_INVITATION.bride.bank.accountName)}`;
+
   return (
     <div id="SECTION8" className="ladi-section">
       <div className="ladi-section-background"></div>
@@ -14,18 +50,42 @@ export default function Section8() {
           data-config-id="6635f69f2dbe070012bd1e29"
           className="ladi-element"
         >
-          <form autoComplete="off" method="post" className="ladi-form">
-            <div id="BUTTON7" className="ladi-element">
+          <form 
+            autoComplete="off" 
+            method="post" 
+            className="ladi-form"
+            onSubmit={handleSubmit}
+          >
+            <div id="BUTTON7" className="ladi-element" style={{ cursor: loading ? 'not-allowed' : 'pointer' }}>
               <div className="ladi-button ladi-transition">
                 <div className="ladi-button-background"></div>
-                <div
-                  id="BUTTON_TEXT7"
-                  className="ladi-element ladi-button-headline"
+                <button 
+                  type="submit" 
+                  disabled={loading}
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    background: 'transparent',
+                    border: 'none',
+                    padding: 0,
+                    margin: 0,
+                    cursor: 'inherit',
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    zIndex: 1
+                  }}
                 >
-                  <p className="ladi-headline ladi-transition">
-                    GỬI LỜI NHẮN và xác nhận
-                  </p>{" "}
-                </div>
+                  <div
+                    id="BUTTON_TEXT7"
+                    className="ladi-element ladi-button-headline"
+                    style={{ position: 'relative', pointerEvents: 'none' }}
+                  >
+                    <p className="ladi-headline ladi-transition">
+                      {loading ? 'ĐANG GỬI...' : 'GỬI LỜI NHẮN và xác nhận'}
+                    </p>{" "}
+                  </div>
+                </button>
               </div>
             </div>
             <div id="FORM_ITEM6" className="ladi-element">
@@ -66,11 +126,12 @@ export default function Section8() {
                 <div className="ladi-form-item">
                   <select
                     tabIndex={3}
-                    name="form_item7"
+                    name="attendance"
                     className="ladi-form-control ladi-form-control-select"
-                    data-selected=""
+                    defaultValue=""
+                    required
                   >
-                    <option value="">Bạn sẽ đến chứ?</option>
+                    <option value="" disabled>Bạn sẽ đến chứ?</option>
                     <option value="Mình chắc chắn sẽ đến">
                       Mình chắc chắn sẽ đến
                     </option>
@@ -87,11 +148,11 @@ export default function Section8() {
                 <div className="ladi-form-item">
                   <select
                     tabIndex={4}
-                    name="form_item8"
+                    name="guests"
                     className="ladi-form-control ladi-form-control-select"
-                    data-selected=""
+                    defaultValue=""
                   >
-                    <option value="">Bạn tham dự cùng ai?</option>
+                    <option value="" disabled>Bạn tham dự cùng ai?</option>
                     <option value="1 người">1 người</option>
                     <option value="2 người">2 người</option>
                     <option value="3 người">3 người</option>
@@ -106,21 +167,26 @@ export default function Section8() {
                 <div className="ladi-form-item">
                   <select
                     tabIndex={5}
-                    name="form_item9"
+                    name="guest_of"
                     className="ladi-form-control ladi-form-control-select"
-                    data-selected=""
+                    defaultValue=""
                   >
-                    <option value="">Bạn là khách mời của ai?</option>
+                    <option value="" disabled>Bạn là khách mời của ai?</option>
                     <option value="Khách mời cô dâu">Khách mời cô dâu</option>
                     <option value="Khách mời chú rể">Khách mời chú rể</option>
                   </select>
                 </div>
               </div>
             </div>
-            <button type="submit" className="ladi-hidden"></button>
           </form>
         </div>
-        <div data-action="true" id="GROUP35" className="ladi-element">
+        <div 
+          data-action="true" 
+          id="GROUP35" 
+          className="ladi-element"
+          style={{ cursor: 'pointer' }}
+          onClick={() => setShowModal(true)}
+        >
           <div className="ladi-group">
             <div id="BOX21" className="ladi-element">
               <div className="ladi-box ladi-transition"></div>
@@ -142,6 +208,82 @@ export default function Section8() {
           </p>{" "}
         </div>
       </div>
+
+      {showModal && (
+        <div 
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            backgroundColor: 'rgba(0,0,0,0.6)',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            zIndex: 10000,
+            backdropFilter: 'blur(5px)'
+          }}
+          onClick={() => setShowModal(false)}
+        >
+          <div 
+            style={{
+              backgroundColor: '#fff',
+              padding: '25px',
+              borderRadius: '20px',
+              maxWidth: '90%',
+              width: '450px',
+              maxHeight: '90vh',
+              overflowY: 'auto',
+              position: 'relative',
+              boxShadow: '0 10px 25px rgba(0,0,0,0.2)'
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button 
+              onClick={() => setShowModal(false)}
+              style={{
+                position: 'absolute',
+                top: '15px',
+                right: '15px',
+                border: 'none',
+                background: '#eee',
+                borderRadius: '50%',
+                width: '30px',
+                height: '30px',
+                cursor: 'pointer',
+                fontSize: '18px'
+              }}
+            >
+              &times;
+            </button>
+            
+            <h3 style={{ textAlign: 'center', marginBottom: '20px', color: '#8b0000', fontFamily: 'TESQSSRUdVTEFSLlRURg' }}>MỪNG CƯỚI HOÀNG & VY</h3>
+            
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
+              {/* Groom */}
+              <div style={{ textAlign: 'center', border: '1px solid #eee', padding: '15px', borderRadius: '15px' }}>
+                <p style={{ fontWeight: 'bold', marginBottom: '10px' }}>CHÚ RỂ: {WEDDING_INVITATION.groom.fullName}</p>
+                <img src={groomQR} alt="QR Chú Rể" style={{ width: '200px', marginBottom: '10px', borderRadius: '10px' }} />
+                <p style={{ fontSize: '14px', color: '#666' }}>{WEDDING_INVITATION.groom.bank.name} - {WEDDING_INVITATION.groom.bank.number}</p>
+              </div>
+
+              {/* Bride */}
+              <div style={{ textAlign: 'center', border: '1px solid #eee', padding: '15px', borderRadius: '15px' }}>
+                <p style={{ fontWeight: 'bold', marginBottom: '10px' }}>CÔ DÂU: {WEDDING_INVITATION.bride.fullName}</p>
+                <img src={brideQR} alt="QR Cô Dâu" style={{ width: '200px', marginBottom: '10px', borderRadius: '10px' }} />
+                <p style={{ fontSize: '14px', color: '#666' }}>{WEDDING_INVITATION.bride.bank.name} - {WEDDING_INVITATION.bride.bank.number}</p>
+              </div>
+            </div>
+            
+            <p style={{ textAlign: 'center', fontSize: '12px', color: '#999', marginTop: '20px', fontStyle: 'italic' }}>
+              Cảm ơn lời chúc và món quà ý nghĩa của bạn!
+            </p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
+
+

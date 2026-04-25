@@ -10,7 +10,15 @@ export default function Section3() {
             <div className="ladi-image-background"></div>
           </div>
         </div>
-        <div data-action="true" id="GROUP14" className="ladi-element">
+        <div 
+          data-action="true" 
+          id="GROUP14" 
+          className="ladi-element" 
+          style={{ top: '1160px', cursor: 'pointer' }}
+          onClick={() => {
+            document.getElementById('SECTION8_WRAPPER')?.scrollIntoView({ behavior: 'smooth' });
+          }}
+        >
           <div className="ladi-group">
             <div id="BOX11" className="ladi-element">
               <div className="ladi-box ladi-transition"></div>
@@ -91,12 +99,12 @@ export default function Section3() {
               <div className="ladi-group">
                 <div id="HEADLINE17" className="ladi-element">
                   <h3 className="ladi-headline ladi-transition">
-                    A<br />
+                    V&nbsp;&nbsp;<br />
                   </h3>{" "}
                 </div>
                 <div id="HEADLINE18" className="ladi-element">
                   <h3 className="ladi-headline ladi-transition">
-                    B<br />
+                    H<br />
                   </h3>{" "}
                 </div>
               </div>
@@ -167,23 +175,50 @@ export default function Section3() {
         <div id="HEADLINE27" className="ladi-element">
           <h3 className="ladi-headline">Địa điểm</h3>{" "}
         </div>
-        <div id="HEADLINE28" className="ladi-element">
-          <h3 className="ladi-headline ladi-transition">
-            {WEDDING_INVITATION.location.name}
+        
+        {/* Nhà Trai */}
+        <div id="HEADLINE28" className="ladi-element" style={{ top: '828px' }}>
+          <h3 className="ladi-headline ladi-transition" style={{ fontSize: '16px', lineHeight: '1.6' }}>
+            <span style={{ color: '#8b0000', fontWeight: 'bold' }}>TIỆC NHÀ TRAI</span>
+            <br />{WEDDING_INVITATION.groomLocation.name}
           </h3>{" "}
         </div>
-        <div id="HEADLINE29" className="ladi-element">
-          <h3 className="ladi-headline ladi-transition">
-            {WEDDING_INVITATION.location.address}
+        <div id="HEADLINE29" className="ladi-element" style={{ top: '893px' }}>
+          <h3 className="ladi-headline ladi-transition" style={{ fontSize: '13px', textTransform: 'none', lineHeight: '1.6' }}>
+            {WEDDING_INVITATION.groomLocation.address}
           </h3>{" "}
         </div>
         <a
-          href={WEDDING_INVITATION.location.mapLink}
+          href={WEDDING_INVITATION.groomLocation.mapLink}
           target="_blank"
           id="HEADLINE30"
           className="ladi-element"
+          style={{ top: '938px', border: '1px solid #38511f', borderRadius: '4px', height: '35px' }}
         >
-          <h3 className="ladi-headline">CHỈ ĐƯỜNG</h3>{" "}
+          <h3 className="ladi-headline" style={{ fontSize: '12px', lineHeight: '35px' }}>CHỈ ĐƯỜNG NHÀ TRAI</h3>{" "}
+        </a>
+
+        {/* Nhà Gái */}
+        <div className="ladi-element" style={{ top: '998px', width: '473px', left: '-26.625px' }}>
+          <h3 className="ladi-headline ladi-transition" style={{ fontSize: '16px', textAlign: 'center', color: 'rgb(56, 81, 31)', textTransform: 'uppercase', fontFamily: 'TESQSSRUdVTEFSLlRURg', lineHeight: '1.6' }}>
+            <span style={{ color: '#8b0000', fontWeight: 'bold' }}>TIỆC NHÀ GÁI</span> 
+            <br />
+            <b>{WEDDING_INVITATION.brideLocation.name}</b>
+          </h3>{" "}
+        </div>
+        <div className="ladi-element" style={{ top: '1063px', width: '395px', left: '12.625px' }}>
+          <h3 className="ladi-headline ladi-transition" style={{ fontSize: '13px', textAlign: 'center', color: 'rgb(56, 81, 31)', fontFamily: 'TESQSSRUdVTEFSLlRURg', textTransform: 'none', lineHeight: '1.6' }}>
+            {WEDDING_INVITATION.brideLocation.address}
+          </h3>{" "}
+        </div>
+        <a
+          href={WEDDING_INVITATION.brideLocation.mapLink}
+          target="_blank"
+          id="HEADLINE30_GIRL"
+          className="ladi-element"
+          style={{ top: '1108px', width: '196px', left: '110.5px', border: '1px solid #38511f', borderRadius: '4px', height: '35px' }}
+        >
+          <h3 className="ladi-headline" style={{ fontSize: '12px', lineHeight: '35px', textAlign: 'center', color: 'rgb(56, 81, 31)' }}>CHỈ ĐƯỜNG NHÀ GÁI</h3>{" "}
         </a>
       </div>
     </div>

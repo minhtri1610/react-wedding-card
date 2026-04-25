@@ -1,31 +1,82 @@
-import Section1 from './Sections/Section1';
-import Section2 from './Sections/Section2';
-import Section3 from './Sections/Section3';
-import Section4 from './Sections/Section4';
-import Section5 from './Sections/Section5';
-import Section6 from './Sections/Section6';
-import Section7 from './Sections/Section7';
-import Section8 from './Sections/Section8';
-import Section9 from './Sections/Section9';
-import SectionPopup from './Sections/SectionPopup';
+import React, { Suspense, lazy } from 'react';
 import useLadiLazyload from '../hooks/useLadiLazyload';
 import useLadiAnimation from '../hooks/useLadiAnimation';
+import LazyLoadSection from './LazyLoadSection';
+
+const Section1 = lazy(() => import('./Sections/Section1'));
+const Section2 = lazy(() => import('./Sections/Section2'));
+const Section3 = lazy(() => import('./Sections/Section3'));
+const Section4 = lazy(() => import('./Sections/Section4'));
+const Section5 = lazy(() => import('./Sections/Section5'));
+const Section6 = lazy(() => import('./Sections/Section6'));
+const Section7 = lazy(() => import('./Sections/Section7'));
+const Section8 = lazy(() => import('./Sections/Section8'));
+const Section9 = lazy(() => import('./Sections/Section9'));
+const SectionPopup = lazy(() => import('./Sections/SectionPopup'));
 
 export default function Content() {
     useLadiLazyload();
     useLadiAnimation();
+
     return (
         <div className='ladi-wraper'>
-        <Section1 />
-        <Section2 />
-        <Section3 />
-        <Section4 />
-        <Section5 />
-        <Section6 />
-        <Section7 />
-        <Section8 />
-        <Section9 />
-        <SectionPopup />
+            <Suspense fallback={<div className="loading-placeholder" style={{ height: '100vh' }} />}>
+                <Section1 />
+            </Suspense>
+
+            <LazyLoadSection offset="500px">
+                <Suspense fallback={<div className="loading-placeholder" style={{ height: '200px' }} />}>
+                    <Section2 />
+                </Suspense>
+            </LazyLoadSection>
+
+            <LazyLoadSection offset="500px">
+                <Suspense fallback={<div className="loading-placeholder" style={{ height: '200px' }} />}>
+                    <Section3 />
+                </Suspense>
+            </LazyLoadSection>
+
+            <LazyLoadSection offset="500px">
+                <Suspense fallback={<div className="loading-placeholder" style={{ height: '200px' }} />}>
+                    <Section4 />
+                </Suspense>
+            </LazyLoadSection>
+
+            <LazyLoadSection offset="500px">
+                <Suspense fallback={<div className="loading-placeholder" style={{ height: '200px' }} />}>
+                    <Section5 />
+                </Suspense>
+            </LazyLoadSection>
+
+            <LazyLoadSection offset="500px">
+                <Suspense fallback={<div className="loading-placeholder" style={{ height: '200px' }} />}>
+                    <Section6 />
+                </Suspense>
+            </LazyLoadSection>
+
+            <LazyLoadSection offset="500px">
+                <Suspense fallback={<div className="loading-placeholder" style={{ height: '200px' }} />}>
+                    <Section7 />
+                </Suspense>
+            </LazyLoadSection>
+
+            <div id="SECTION8_WRAPPER">
+                <LazyLoadSection offset="500px">
+                    <Suspense fallback={<div className="loading-placeholder" style={{ height: '200px' }} />}>
+                        <Section8 />
+                    </Suspense>
+                </LazyLoadSection>
+            </div>
+
+            <LazyLoadSection offset="500px">
+                <Suspense fallback={<div className="loading-placeholder" style={{ height: '200px' }} />}>
+                    <Section9 />
+                </Suspense>
+            </LazyLoadSection>
+
+            <Suspense fallback={null}>
+                <SectionPopup />
+            </Suspense>
         </div>
     )
 }

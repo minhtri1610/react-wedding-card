@@ -2106,68 +2106,7 @@ a,
             transition: transform 300ms ease-in-out;
         }
         @media (max-width: 767px) {
-
-            #HEADLINE4,
-            #HEADLINE5,
-            #HEADLINE6,
-            #HEADLINE7,
-            #HEADLINE8,
-            #GROUP2,
-            #HEADLINE9,
-            #HEADLINE10,
-            #GROUP3,
-            #GROUP6,
-            #HEADLINE11,
-            #HEADLINE12,
-            #GROUP7,
-            #GROUP9,
-            #GROUP10,
-            #GROUP12,
-            #HEADLINE19,
-            #HEADLINE20,
-            #HEADLINE21,
-            #HEADLINE22,
-            #HEADLINE23,
-            #HEADLINE24,
-            #HEADLINE25,
-            #HEADLINE26,
-            #HEADLINE27,
-            #HEADLINE28,
-            #HEADLINE29,
-            #HEADLINE30,
-            #HEADLINE33,
-            #HEADLINE34,
-            #HEADLINE35,
-            #HEADLINE36,
-            #HEADLINE79,
-            #HEADLINE83,
-            #IMAGE5,
-            #IMAGE6,
-            #IMAGE7,
-            #IMAGE8,
-            #GROUP27,
-            #GROUP28,
-            #GROUP30,
-            #GROUP32,
-            #BOX20,
-            #BUTTON7,
-            #FORM3,
-            #GROUP35,
-            #HEADLINE100,
-            #HEADLINE101,
-            #HEADLINE102,
-            #IMAGE25,
-            #HEADLINE115,
-            #GROUP41,
-            #HEADLINE117,
-            #IMAGE34,
-            #HEADLINE156,
-            #IMAGE35,
-            #HEADLINE194,
-            #IMAGE36 {
-                opacity: 0 !important;
-                pointer-events: none !important;
-            }
+            /* Removed opacity: 0 to allow elements to be visible on mobile */
         }
         body {
             direction: ltr;
@@ -2952,6 +2891,7 @@ a,
         #GROUP14 {
             top: 989.81px;
             left: 102px;
+            z-index: 10;
         }
 
         #BOX11>.ladi-box {
@@ -3110,13 +3050,13 @@ a,
 
         #IMAGE2,
         #IMAGE2>.ladi-image>.ladi-image-background {
-            width: 69.6741px;
-            height: 127.977px;
+            width: 76px;
+            height: 141px;
         }
 
         #IMAGE2 {
-            top: 0px;
-            left: 3.663px;
+            top: -8px;
+            left: -3.337px;
         }
 
         #IMAGE2>.ladi-image>.ladi-image-background {
@@ -3997,7 +3937,7 @@ a,
         }
 
         #HEADLINE79 {
-            top: 453.35px;
+            top: 435px;
             left: 12.5px;
         }
 
@@ -4041,7 +3981,7 @@ a,
         }
 
         #HEADLINE80 {
-            top: 1px;
+            bottom: 0;
             left: 46.4563px;
         }
 
@@ -4057,12 +3997,12 @@ a,
         }
 
         #HEADLINE81 {
-            top: 1px;
+            bottom: 0;
             left: 116.912px;
         }
 
         #HEADLINE82 {
-            top: 1px;
+            bottom: 0;
             left: 187.281px;
         }
 
@@ -5636,4 +5576,8 @@ a,
     100% {
       left: 100%;
     }
+  }
+
+  .ladi-headline b{
+    font-weight: bold;
   }

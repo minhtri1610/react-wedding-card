@@ -1,6 +1,12 @@
 import { WEDDING_INVITATION } from '../../config/wedding';
+import { useCountdown } from '../../hooks/useCountdown';
 
 export default function Section5() {
+  const { days, hours, minutes, seconds } = useCountdown(
+    WEDDING_INVITATION.date.dayMonthYear,
+    WEDDING_INVITATION.date.time
+  );
+
   return (
     <div id="SECTION5" className="ladi-section">
       <div className="ladi-section-background"></div>
@@ -22,174 +28,181 @@ export default function Section5() {
             <br />
           </h3>{" "}
         </div>
-        <div id="HEADLINE75" className="ladi-element">
-          <p className="ladi-headline ladi-transition">
-            20
-            <br />
-          </p>{" "}
-        </div>
-        <div id="HEADLINE74" className="ladi-element">
-          <p className="ladi-headline ladi-transition">
-            19
-            <br />
-          </p>{" "}
-        </div>
-        <div id="HEADLINE73" className="ladi-element">
-          <p className="ladi-headline ladi-transition">
-            18
-            <br />
-          </p>{" "}
-        </div>
-        <div id="HEADLINE72" className="ladi-element">
-          <p className="ladi-headline ladi-transition">
-            17
-            <br />
-          </p>{" "}
-        </div>
         <div id="HEADLINE71" className="ladi-element">
-          <p className="ladi-headline ladi-transition">
-            16
-            <br />
-          </p>{" "}
-        </div>
-        <div id="HEADLINE70" className="ladi-element">
           <p className="ladi-headline ladi-transition">
             15
             <br />
           </p>{" "}
         </div>
-        <div id="HEADLINE69" className="ladi-element">
+        <div id="HEADLINE70" className="ladi-element">
           <p className="ladi-headline ladi-transition">
             14
             <br />
           </p>{" "}
         </div>
-        <div id="HEADLINE68" className="ladi-element">
-          <p className="ladi-headline ladi-transition">
-            27
-            <br />
-          </p>{" "}
-        </div>
-        <div id="HEADLINE67" className="ladi-element">
-          <p className="ladi-headline ladi-transition">
-            26
-            <br />
-          </p>{" "}
-        </div>
-        <div id="HEADLINE66" className="ladi-element">
-          <p className="ladi-headline ladi-transition">
-            25
-            <br />
-          </p>{" "}
-        </div>
-        <div id="HEADLINE65" className="ladi-element">
-          <p className="ladi-headline ladi-transition">
-            24
-            <br />
-          </p>{" "}
-        </div>
-        <div id="HEADLINE64" className="ladi-element">
-          <p className="ladi-headline ladi-transition">23</p>{" "}
-        </div>
-        <div id="HEADLINE63" className="ladi-element">
-          <p className="ladi-headline ladi-transition">22</p>{" "}
-        </div>
-        <div id="HEADLINE62" className="ladi-element">
-          <p className="ladi-headline ladi-transition">
-            21
-            <br />
-          </p>{" "}
-        </div>
-        <div id="HEADLINE54" className="ladi-element">
-          <p className="ladi-headline ladi-transition">
-            28
-            <br />
-          </p>{" "}
-        </div>
-        <div id="HEADLINE53" className="ladi-element">
+        <div id="HEADLINE69" className="ladi-element">
           <p className="ladi-headline ladi-transition">
             13
             <br />
           </p>{" "}
         </div>
-        <div id="HEADLINE52" className="ladi-element">
+        <div id="HEADLINE68" className="ladi-element">
+          <p className="ladi-headline ladi-transition">
+            26
+            <br />
+          </p>{" "}
+        </div>
+        <div id="HEADLINE67" className="ladi-element">
+          <p className="ladi-headline ladi-transition">
+            25
+            <br />
+          </p>{" "}
+        </div>
+        <div id="HEADLINE66" className="ladi-element">
+          <p className="ladi-headline ladi-transition">
+            24
+            <br />
+          </p>{" "}
+        </div>
+        <div id="HEADLINE65" className="ladi-element">
+          <p className="ladi-headline ladi-transition">
+            23
+            <br />
+          </p>{" "}
+        </div>
+        <div id="HEADLINE64" className="ladi-element">
+          <p className="ladi-headline ladi-transition">22</p>{" "}
+        </div>
+        <div id="HEADLINE63" className="ladi-element">
+          <p className="ladi-headline ladi-transition">21</p>{" "}
+        </div>
+        <div id="HEADLINE62" className="ladi-element">
+          <p className="ladi-headline ladi-transition">
+            20
+            <br />
+          </p>{" "}
+        </div>
+        <div id="HEADLINE54" className="ladi-element">
+          <p className="ladi-headline ladi-transition">
+            27
+            <br />
+          </p>{" "}
+        </div>
+        <div id="HEADLINE53" className="ladi-element">
           <p className="ladi-headline ladi-transition">
             12
             <br />
           </p>{" "}
         </div>
-        <div id="HEADLINE51" className="ladi-element">
+        <div id="HEADLINE52" className="ladi-element">
           <p className="ladi-headline ladi-transition">
             11
             <br />
           </p>{" "}
         </div>
-        <div id="HEADLINE50" className="ladi-element">
+        <div id="HEADLINE51" className="ladi-element">
           <p className="ladi-headline ladi-transition">
             10
             <br />
           </p>{" "}
         </div>
-        <div id="HEADLINE49" className="ladi-element">
+        <div id="HEADLINE50" className="ladi-element">
           <p className="ladi-headline ladi-transition">
             9<br />
           </p>{" "}
         </div>
-        <div id="HEADLINE48" className="ladi-element">
+        <div id="HEADLINE49" className="ladi-element">
           <p className="ladi-headline ladi-transition">
             8<br />
           </p>{" "}
         </div>
-        <div id="HEADLINE47" className="ladi-element">
+        <div id="HEADLINE48" className="ladi-element">
           <p className="ladi-headline ladi-transition">
             7<br />
           </p>{" "}
         </div>
-        <div id="HEADLINE46" className="ladi-element">
+        <div id="HEADLINE47" className="ladi-element">
           <p className="ladi-headline ladi-transition">
             6<br />
           </p>{" "}
         </div>
-        <div id="HEADLINE45" className="ladi-element">
+        <div id="HEADLINE46" className="ladi-element">
           <p className="ladi-headline ladi-transition">
             5<br />
           </p>{" "}
         </div>
-        <div id="HEADLINE44" className="ladi-element">
+        <div id="HEADLINE45" className="ladi-element">
           <p className="ladi-headline ladi-transition">
             4<br />
           </p>{" "}
         </div>
-        <div id="HEADLINE43" className="ladi-element">
+        <div id="HEADLINE44" className="ladi-element">
           <p className="ladi-headline ladi-transition">
             3<br />
           </p>{" "}
         </div>
-        <div id="HEADLINE42" className="ladi-element">
+        <div id="HEADLINE43" className="ladi-element">
           <p className="ladi-headline ladi-transition">
             2<br />
           </p>{" "}
         </div>
-        <div id="HEADLINE41" className="ladi-element">
+        <div id="HEADLINE42" className="ladi-element">
           <p className="ladi-headline ladi-transition">
             1<br />
           </p>{" "}
         </div>
+        <div id="HEADLINE41" className="ladi-element">
+          <p className="ladi-headline ladi-transition">
+            &nbsp;
+            <br />
+          </p>{" "}
+        </div>
         <div id="HEADLINE76" className="ladi-element">
           <p className="ladi-headline ladi-transition">
-            29
+            28
             <br />
           </p>{" "}
         </div>
         <div id="HEADLINE77" className="ladi-element">
           <p className="ladi-headline ladi-transition">
-            30
+            29
             <br />
           </p>{" "}
         </div>
         <div id="HEADLINE78" className="ladi-element">
           <p className="ladi-headline ladi-transition">
+            30
+            <br />
+          </p>{" "}
+        </div>
+        {/* July has 31 days. Positioning it at Row 5, Friday (left: 235.628px) */}
+        <div className="ladi-element" style={{ top: '393.795px', left: '235.628px', width: '43px' }}>
+          <p className="ladi-headline ladi-transition" style={{ fontFamily: 'TESQSSRUdVTEFSLlRURg', fontSize: '16px', lineHeight: '1.6', color: 'rgb(78, 100, 55)', textAlign: 'center' }}>
             31
+            <br />
+          </p>{" "}
+        </div>
+        <div id="HEADLINE72" className="ladi-element">
+          <p className="ladi-headline ladi-transition">
+            <b>16</b>
+            <br />
+          </p>{" "}
+        </div>
+        <div id="HEADLINE73" className="ladi-element">
+          <p className="ladi-headline ladi-transition">
+            17
+            <br />
+          </p>{" "}
+        </div>
+        <div id="HEADLINE74" className="ladi-element">
+          <p className="ladi-headline ladi-transition">
+            18
+            <br />
+          </p>{" "}
+        </div>
+        <div id="HEADLINE75" className="ladi-element">
+          <p className="ladi-headline ladi-transition">
+            19
             <br />
           </p>{" "}
         </div>
@@ -246,25 +259,29 @@ export default function Section5() {
                 <div id="COUNTDOWN_ITEM1" className="ladi-element">
                   <div className="ladi-countdown-background"></div>
                   <div className="ladi-countdown-text">
-                    <span>00</span>
+                    <p style={{ fontSize: '10px', marginTop: '-5px', fontWeight: 'normal', textTransform: 'uppercase' }}>Ngày</p>
+                    <span>{days}</span>
                   </div>
                 </div>
                 <div id="COUNTDOWN_ITEM2" className="ladi-element">
                   <div className="ladi-countdown-background"></div>
                   <div className="ladi-countdown-text">
-                    <span>00</span>
+                    <p style={{ fontSize: '10px', marginTop: '-5px', fontWeight: 'normal', textTransform: 'uppercase' }}>Giờ</p>
+                    <span>{hours}</span>
                   </div>
                 </div>
                 <div id="COUNTDOWN_ITEM3" className="ladi-element">
                   <div className="ladi-countdown-background"></div>
                   <div className="ladi-countdown-text">
-                    <span>00</span>
+                    <p style={{ fontSize: '10px', marginTop: '-5px', fontWeight: 'normal', textTransform: 'uppercase' }}>Phút</p>
+                    <span>{minutes}</span>
                   </div>
                 </div>
                 <div id="COUNTDOWN_ITEM4" className="ladi-element">
                   <div className="ladi-countdown-background"></div>
                   <div className="ladi-countdown-text">
-                    <span>00</span>
+                    <p style={{ fontSize: '10px', marginTop: '-5px', fontWeight: 'normal', textTransform: 'uppercase' }}>Giây</p>
+                    <span>{seconds}</span>
                   </div>
                 </div>
               </div>
@@ -286,7 +303,7 @@ export default function Section5() {
             </div>
           </div>
         </div>
-        <div id="IMAGE25" className="ladi-element">
+        <div id="IMAGE25" className="ladi-element" style={{ top: '320.188px', left: '191.783px' }}>
           <div className="ladi-image">
             <div className="ladi-image-background"></div>
           </div>

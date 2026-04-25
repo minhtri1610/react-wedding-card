@@ -64,7 +64,7 @@ export default function Section2() {
         <div id="GROUP2" className="ladi-element">
           <div className="ladi-group">
             <div id="BOX6" className="ladi-element">
-              <div className="ladi-box ladi-transition"></div>
+              <div className="ladi-box "></div>
             </div>
             <div id="BOX7" className="ladi-element">
               <div className="ladi-box ladi-transition"></div>

@@ -35,14 +35,25 @@ export const WEDDING_INVITATION = {
     yearStr: '26',
     yearFull: '2026',
     time: '17 giờ 30',
-    dayOfWeek: 'thứ bảy',
-    lunarDate: '(Tức ngày 11 tháng 06 năm Bính Ngọ)',
+    dayOfWeek: 'thứ năm',
+    lunarDate: '(Tức ngày 03 tháng 06 năm Bính Ngọ)',
     calendarMonth: 'July',
+  },
+  groomLocation: {
+    name: 'Holiday Inn & Suites Saigon Airport',
+    address: '18E Đường Cộng Hòa, P. 4, Q. Tân Bình, TP. HCM',
+    mapLink: 'https://maps.app.goo.gl/EoKsSLhT3woFhtSZ6',
+  },
+  brideLocation: {
+    name: 'Trung tâm Hội nghị Tiệc cưới Gem Center',
+    address: '08 Nguyễn Bỉnh Khiêm, Đa Kao, Quận 1, TP. HCM',
+    mapLink: 'https://maps.app.goo.gl/GemCenterLinkPlaceholder',
   },
   location: {
     name: 'Holiday Inn & Suites Saigon Airport',
     address: 'Địa chỉ: 18E Đường Cộng Hòa, P. 4, Q. Tân Bình, TP. Hồ Chí Minh',
     mapLink: 'https://maps.app.goo.gl/EoKsSLhT3woFhtSZ6',
     city: 'TP. HCM',
-  }
+  },
+  googleSheetUrl: 'https://script.google.com/macros/s/AKfycbxF6vrpcKvDmEMbXAS5o6c3wXmMd8ujY9vEe0Iyf3Oqe3BBHYeBwmz9GCjlkvhr-JkS/exec'
 };

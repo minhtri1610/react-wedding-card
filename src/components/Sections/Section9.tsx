@@ -1,22 +1,8 @@
-import { useState, useCallback } from 'react';
+import { useMusic } from '../../hooks/useMusic';
 
 export default function Section9() {
-  const [isPlaying, setIsPlaying] = useState(false);
+  const { isPlaying, toggleMusic } = useMusic();
 
-  const toggleMusic = useCallback(() => {
-    const audio = document.getElementById('bg-music') as HTMLAudioElement | null;
-    if (!audio) return;
-
-    if (audio.paused) {
-      audio.play().then(() => setIsPlaying(true)).catch(() => {
-        // Autoplay may be blocked by browser policy
-        console.warn('Audio play was blocked by browser');
-      });
-    } else {
-      audio.pause();
-      setIsPlaying(false);
-    }
-  }, []);
 
   return (
     <div id="SECTION9" className="ladi-section">

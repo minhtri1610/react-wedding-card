@@ -1,74 +1,89 @@
-import { useEffect, useRef } from 'react';
+import { useLayoutEffect, useRef } from 'react';
 
 /**
- * CSS selector for elements that have animation rules gated behind
- * the `.ladi-animation` class.
- *
- * The original LadiPage runtime (`unindex.js`) would observe which
- * elements scroll into the viewport and dynamically add `.ladi-animation`
- * to trigger the CSS keyframe.  This hook replicates that behaviour
- * using `IntersectionObserver`.
+ * CSS selector for elements that should be handled by the animation system.
+ * We include all .ladi-element to ensure consistent behavior.
  */
-const ANIMATION_SELECTOR = [
-  '.ladi-element[id]',
-].join(', ');
+const ANIMATION_SELECTOR = '.ladi-element';
 
 /**
- * React hook that observes LadiPage elements and adds the
- * `ladi-animation` class when they first enter the viewport,
- * replicating the original LadiPage scroll-triggered animation system.
- *
- * It also removes the `ladi-animation-hidden` class that keeps
- * elements invisible until they animate in.
+ * React hook that observes LadiPage elements and triggers animations.
+ * 
+ * To avoid the "flash" of content before animation, this hook:
+ * 1. Uses useLayoutEffect to run synchronously before the browser paints.
+ * 2. Works in tandem with a global CSS rule that sets .ladi-element { opacity: 0 }.
+ * 3. Adds the .ladi-animation class which triggers the CSS keyframes.
  */
 export default function useLadiAnimation(): void {
   const observerRef = useRef<IntersectionObserver | null>(null);
 
-  useEffect(() => {
-    // Small delay to let the DOM fully render
-    const timeoutId = setTimeout(() => {
-      const elements = document.querySelectorAll<HTMLElement>(ANIMATION_SELECTOR);
+  useLayoutEffect(() => {
+    // 1. Create the IntersectionObserver
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const el = entry.target as HTMLElement;
+            
+            // Trigger animation
+            el.classList.add('ladi-animation');
 
-      if (elements.length === 0) return;
+            // Remove hidden class if present
+            const style = getComputedStyle(el);
+            const delay = (parseFloat(style.animationDelay) || 0) * 1000;
 
-      observerRef.current = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              const el = entry.target as HTMLElement;
+            setTimeout(() => {
+              el.classList.remove('ladi-animation-hidden');
+            }, delay);
 
-              // Add the animation trigger class
-              el.classList.add('ladi-animation');
+            // Once animated, we can stop observing
+            observerRef.current?.unobserve(el);
+          }
+        });
+      },
+      { 
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px' // Trigger slightly before it fully enters
+      }
+    );
 
-              // Remove the "hidden until animated" class after animation-delay
-              const style = getComputedStyle(el);
-              const delay = (parseFloat(style.animationDelay) || 0) * 1000;
-
-              setTimeout(() => {
-                el.classList.remove('ladi-animation-hidden');
-              }, delay);
-
-              // Only animate once — stop observing after triggered
-              observerRef.current?.unobserve(el);
-            }
-          });
-        },
-        {
-          // Trigger when at least 10% of the element is visible
-          threshold: 0.1,
-        }
-      );
-
+    // 2. Function to observe elements
+    const observeElements = (container: ParentNode = document) => {
+      const elements = container.querySelectorAll<HTMLElement>(ANIMATION_SELECTOR);
       elements.forEach((el) => {
-        // Only observe elements whose CSS actually uses `.ladi-animation`
-        // (i.e. they have animation rules defined in the stylesheet)
-        observerRef.current?.observe(el);
+        // Only observe if it hasn't been animated yet
+        if (!el.classList.contains('ladi-animation')) {
+          observerRef.current?.observe(el);
+        }
       });
-    }, 100);
+    };
+
+    // Initial sync observation (before paint)
+    observeElements();
+
+    // 3. Set up MutationObserver to handle lazy-loaded sections
+    const mutationObserver = new MutationObserver((mutations) => {
+      for (const mutation of mutations) {
+        for (const node of mutation.addedNodes) {
+          if (node instanceof HTMLElement) {
+            if (node.matches(ANIMATION_SELECTOR)) {
+              observerRef.current?.observe(node);
+            }
+            observeElements(node);
+          }
+        }
+      }
+    });
+
+    mutationObserver.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
 
     return () => {
-      clearTimeout(timeoutId);
+      mutationObserver.disconnect();
       observerRef.current?.disconnect();
     };
   }, []);
 }
+
