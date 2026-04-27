@@ -1,4 +1,9 @@
+import { useSearchParams } from 'react-router-dom';
+
 export default function Section6() {
+  const [searchParams] = useSearchParams();
+  const type = searchParams.get('type');
+
   return (
     <div id="SECTION6" className="ladi-section">
       <div className="ladi-section-background"></div>
@@ -45,15 +50,13 @@ export default function Section6() {
                   <div className="ladi-group">
                     <div id="HEADLINE84" className="ladi-element">
                       <h3 className="ladi-headline ladi-transition">
-                        17:30
+                        {type === 'bride' ? '07:30' : (type === 'groom' ? '11:00' : '17:30')}
                         <br />
                       </h3>{" "}
                     </div>
                     <div id="HEADLINE85" className="ladi-element">
                       <h3 className="ladi-headline ladi-transition">
-                        Chụp ảnh
-                        <br />
-                        với photobooth
+                        {type === 'bride' || type === 'groom' ? 'Đón khách' : 'Chụp ảnh với photobooth'}
                         <br />
                       </h3>{" "}
                     </div>
@@ -72,13 +75,13 @@ export default function Section6() {
                   <div className="ladi-group">
                     <div id="HEADLINE86" className="ladi-element">
                       <h3 className="ladi-headline ladi-transition">
-                        18:00
+                        {type === 'bride' ? '08:00' : (type === 'groom' ? '11:30' : '18:00')}
                         <br />
                       </h3>{" "}
                     </div>
                     <div id="HEADLINE87" className="ladi-element">
                       <h3 className="ladi-headline ladi-transition">
-                        Tiếp đón khách mời
+                        {type === 'bride' ? 'Lễ Vu Quy' : (type === 'groom' ? 'Lễ Thành Hôn' : 'Tiếp đón khách mời')}
                         <br />
                       </h3>{" "}
                     </div>
@@ -97,13 +100,13 @@ export default function Section6() {
                   <div className="ladi-group">
                     <div id="HEADLINE88" className="ladi-element">
                       <h3 className="ladi-headline ladi-transition">
-                        19:00
+                        {type === 'bride' ? '09:00' : (type === 'groom' ? '12:30' : '19:00')}
                         <br />
                       </h3>{" "}
                     </div>
                     <div id="HEADLINE89" className="ladi-element">
                       <h3 className="ladi-headline ladi-transition">
-                        Bắt đầu lễ thành hôn
+                        {type === 'bride' || type === 'groom' ? 'Khai tiệc' : 'Bắt đầu lễ thành hôn'}
                         <br />
                       </h3>{" "}
                     </div>
@@ -122,13 +125,13 @@ export default function Section6() {
                   <div className="ladi-group">
                     <div id="HEADLINE90" className="ladi-element">
                       <h3 className="ladi-headline ladi-transition">
-                        19:30
+                        {type === 'bride' ? '10:00' : (type === 'groom' ? '13:30' : '19:30')}
                         <br />
                       </h3>{" "}
                     </div>
                     <div id="HEADLINE91" className="ladi-element">
                       <h3 className="ladi-headline ladi-transition">
-                        Lễ Vu Quy
+                        {type === 'bride' || type === 'groom' ? 'Cảm ơn' : 'Lễ Vu Quy'}
                         <br />
                       </h3>{" "}
                     </div>

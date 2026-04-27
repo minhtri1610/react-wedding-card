@@ -33,8 +33,7 @@ export default function Section8() {
   };
 
   const groomQR = `https://img.vietqr.io/image/${WEDDING_INVITATION.groom.bank.name.toLowerCase()}-${WEDDING_INVITATION.groom.bank.number}-compact2.jpg?addInfo=Mung%20Cuoi%20Hoang%20Vy&accountName=${encodeURIComponent(WEDDING_INVITATION.groom.bank.accountName)}`;
-  const brideQR = `https://img.vietqr.io/image/vcb-${WEDDING_INVITATION.bride.bank.numberQR}-compact2.jpg?addInfo=Mung%20Cuoi%20Hoang%20Vy&accountName=${encodeURIComponent(WEDDING_INVITATION.bride.bank.accountName)}`;
-
+  const brideQR = `https://img.vietqr.io/image/${WEDDING_INVITATION.bride.bank.name.toLowerCase()}-${WEDDING_INVITATION.bride.bank.number}-compact2.jpg?addInfo=Mung%20Cuoi%20Hoang%20Vy&accountName=${encodeURIComponent(WEDDING_INVITATION.bride.bank.accountName)}`;
   return (
     <div id="SECTION8" className="ladi-section">
       <div className="ladi-section-background"></div>
@@ -258,20 +257,20 @@ export default function Section8() {
               &times;
             </button>
             
-            <h3 style={{ textAlign: 'center', marginBottom: '20px', color: '#8b0000', fontFamily: 'TESQSSRUdVTEFSLlRURg' }}>MỪNG CƯỚI HOÀNG & VY</h3>
+            <h3 style={{ textAlign: 'center', marginBottom: '20px', color: '#8b0000', fontFamily: 'TESQSSRUdVTEFSLlRURg' }}>MỪNG CƯỚI ĐỨC HOÀNG & THÚY VY</h3>
             
             <div style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
               {/* Groom */}
               <div style={{ textAlign: 'center', border: '1px solid #eee', padding: '15px', borderRadius: '15px' }}>
                 <p style={{ fontWeight: 'bold', marginBottom: '10px' }}>CHÚ RỂ: {WEDDING_INVITATION.groom.fullName}</p>
-                <img src={groomQR} alt="QR Chú Rể" style={{ width: '200px', marginBottom: '10px', borderRadius: '10px' }} />
+                <img src={groomQR} alt="QR Chú Rể" style={{ marginBottom: '10px', borderRadius: '10px' }} />
                 <p style={{ fontSize: '14px', color: '#666' }}>{WEDDING_INVITATION.groom.bank.name} - {WEDDING_INVITATION.groom.bank.number}</p>
               </div>
 
               {/* Bride */}
               <div style={{ textAlign: 'center', border: '1px solid #eee', padding: '15px', borderRadius: '15px' }}>
                 <p style={{ fontWeight: 'bold', marginBottom: '10px' }}>CÔ DÂU: {WEDDING_INVITATION.bride.fullName}</p>
-                <img src={brideQR} alt="QR Cô Dâu" style={{ width: '200px', marginBottom: '10px', borderRadius: '10px' }} />
+                <img src={brideQR} alt="QR Cô Dâu" style={{ marginBottom: '10px', borderRadius: '10px' }} />
                 <p style={{ fontSize: '14px', color: '#666' }}>{WEDDING_INVITATION.bride.bank.name} - {WEDDING_INVITATION.bride.bank.number}</p>
               </div>
             </div>

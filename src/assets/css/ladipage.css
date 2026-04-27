@@ -2254,10 +2254,10 @@ a,
         }
 
         #BOX1>.ladi-box {
-            background-image: url(../img/header/03.png);
-            background-size: 125%;
+            background-image: url(../img/vc01.webp);
+            background-size: 115%;
             background-origin: content-box;
-            background-position: 10% 50%;
+            background-position: 11% 50%;
             background-repeat: repeat;
             background-attachment: scroll;
         }
@@ -2772,12 +2772,12 @@ a,
         }
 
         #BOX8>.ladi-box {
-            background-image: url("../img/lady/b-02.svg");
-            background-size: 150%;
-    background-origin: content-box;
-    background-position: 15% 56%;
-    background-repeat: repeat;
-    background-attachment: scroll;
+            background-image: url("../img/cr01.webp");
+            background-size: 105%;
+            background-origin: content-box;
+            background-position: 0% 60%;
+            background-repeat: repeat;
+            background-attachment: scroll;
         }
 
         #BOX9,
@@ -2837,10 +2837,10 @@ a,
         }
 
         #BOX6>.ladi-box {
-            background-image: url("../img/lady/g-05.svg");
-            background-size: 200%;
+            background-image: url("../img/cd01.webp");
+            background-size: 292%;
             background-origin: content-box;
-            background-position: 55% 75%;
+            background-position: 37% 75%;
             background-repeat: repeat;
             background-attachment: scroll;
         }
@@ -3312,10 +3312,10 @@ a,
         }
 
         #BOX14>.ladi-box {
-            background-image: url("https://w.ladicdn.com/s750x600/6322a62f2dad980013bb5005/499969596_1217929596638342_9122326818986027469_n-20250801053747-ju7oi.jpg");
-            background-size: cover;
+            background-image: url("../img/m01.png");
+            background-size: 125%;
             background-origin: content-box;
-            background-position: 50% 0%;
+            background-position: 51% 73%;
             background-repeat: repeat;
             background-attachment: scroll;
         }
@@ -4324,10 +4324,10 @@ a,
         }
 
         #BOX16>.ladi-box {
-            background-image: url("https://w.ladicdn.com/s750x950/6322a62f2dad980013bb5005/499549192_1217902443307724_4662254472995135130_n-20250801091404-qx-cu.jpg");
-            background-size: cover;
+            background-image: url("../img/m02.svg");
+            background-size: 115%;
             background-origin: content-box;
-            background-position: 50% 0%;
+            background-position: 50% 95%;
             background-repeat: repeat;
             background-attachment: scroll;
             filter: brightness(61%);
@@ -4739,10 +4739,10 @@ a,
         }
 
         #BOX20>.ladi-box {
-            background-image: url("https://w.ladicdn.com/s750x750/6322a62f2dad980013bb5005/anh-lyly-copy-20250801093106-oatrn.png");
-            background-size: cover;
+            background-image: url("../img/m03.png");
+            background-size: 100%;
             background-origin: content-box;
-            background-position: 50% 0%;
+            background-position: 50% 50%;
             background-repeat: repeat;
             background-attachment: scroll;
             filter: drop-shadow(rgba(63, 61, 61, 0.5) 0px 4px 3px);
@@ -4795,45 +4795,62 @@ a,
         }
 
         #GALLERY1 .ladi-gallery .ladi-gallery-view-item[data-index="0"] {
-            background-image: url("https://w.ladicdn.com/s750x1050/6322a62f2dad980013bb5005/498698628_1217919699972665_3950713992359690805_n-20250801093526-u-ut-.jpg");
+            background-image: url("../img/05.webp");
+            background-size: 130%;
+            background-position: 50% 111%;
         }
 
         #GALLERY1 .ladi-gallery .ladi-gallery-control-item[data-index="0"] {
-            background-image: url("https://w.ladicdn.com/s400x400/6322a62f2dad980013bb5005/498698628_1217919699972665_3950713992359690805_n-20250801093526-u-ut-.jpg");
+            background-image:url("../img/05.webp");
         }
 
         #GALLERY1 .ladi-gallery .ladi-gallery-view-item[data-index="1"] {
-            background-image: url("https://w.ladicdn.com/s750x1050/6322a62f2dad980013bb5005/499529434_1217922819972353_8731517343624822133_n-20250801093526-ercug.jpg");
+            background-image: url("../img/vc02.webp");
+            background-size: 150%;
+            background-position: 50% 95%;
         }
 
         #GALLERY1 .ladi-gallery .ladi-gallery-control-item[data-index="1"] {
-            background-image: url("https://w.ladicdn.com/s400x400/6322a62f2dad980013bb5005/499529434_1217922819972353_8731517343624822133_n-20250801093526-ercug.jpg");
+            background-image: url("../img/vc02.webp");
         }
 
         #GALLERY1 .ladi-gallery .ladi-gallery-view-item[data-index="2"] {
-            background-image: url("https://w.ladicdn.com/s750x1050/6322a62f2dad980013bb5005/500137219_1217929549971680_2252158587272247506_n-20250801093526-x3gnn.jpg");
+            background-image: url("../img/03.webp");
+            background-size: 160%;
+            background-position: 50% 20%;
         }
 
         #GALLERY1 .ladi-gallery .ladi-gallery-control-item[data-index="2"] {
-            background-image: url("https://w.ladicdn.com/s400x400/6322a62f2dad980013bb5005/500137219_1217929549971680_2252158587272247506_n-20250801093526-x3gnn.jpg");
+            background-image: url("../img/03.webp");
         }
 
         #GALLERY1 .ladi-gallery .ladi-gallery-view-item[data-index="3"] {
-            background-image: url("https://w.ladicdn.com/s750x1050/6322a62f2dad980013bb5005/498663182_1217924226638879_9128200548784700946_n-20250801093526-sh9ah.jpg");
+            background-image: url("../img/vc03.webp");
+            background-size: contain;
         }
 
         #GALLERY1 .ladi-gallery .ladi-gallery-control-item[data-index="3"] {
-            background-image: url("https://w.ladicdn.com/s400x400/6322a62f2dad980013bb5005/498663182_1217924226638879_9128200548784700946_n-20250801093526-sh9ah.jpg");
+            background-image: url("../img/vc03.webp");
         }
 
         #GALLERY1 .ladi-gallery .ladi-gallery-view-item[data-index="4"] {
-            background-image: url("https://w.ladicdn.com/s750x1050/6322a62f2dad980013bb5005/499557600_1217919349972700_7630155800939108789_n-20250801093526-6ivsb.jpg");
+            background-image: url("../img/vc04.webp");
+            background-position: 41%;
         }
 
         #GALLERY1 .ladi-gallery .ladi-gallery-control-item[data-index="4"] {
-            background-image: url("https://w.ladicdn.com/s400x400/6322a62f2dad980013bb5005/499557600_1217919349972700_7630155800939108789_n-20250801093526-6ivsb.jpg");
+            background-image: url("../img/vc04.webp");
         }
 
+        #GALLERY1 .ladi-gallery .ladi-gallery-view-item[data-index="5"] {
+            background-image: url("../img/06.webp");
+            background-size: contain;
+        }
+
+        #GALLERY1 .ladi-gallery .ladi-gallery-control-item[data-index="5"] {
+            background-image: url("../img/06.webp");
+        }
+/* 
         #GALLERY1 .ladi-gallery .ladi-gallery-view-item[data-index="5"] {
             background-image: url("https://w.ladicdn.com/s750x1050/6322a62f2dad980013bb5005/499986782_1217924883305480_8112103841224992916_n-1-20250801093526-j4hrf.jpg");
         }
@@ -4848,7 +4865,7 @@ a,
 
         #GALLERY1 .ladi-gallery .ladi-gallery-control-item[data-index="6"] {
             background-image: url("https://w.ladicdn.com/s400x400/6322a62f2dad980013bb5005/499253973_1217919006639401_2946999568903064952_n-20250801093526-mhp-p.jpg");
-        }
+        } */
 
         #SECTION8 {
             height: 601.3px;
@@ -5090,12 +5107,10 @@ a,
         }
 
         #BOX22>.ladi-box {
-            background-image: url("https://w.ladicdn.com/s750x600/6322a62f2dad980013bb5005/498669062_1217929593305009_2950814735260536275_n-20250801091614-8meqm.jpg");
+            background-image: url("../img/08.jpg");
             background-size: cover;
-            background-origin: content-box;
-            background-position: 50% 0%;
-            background-repeat: repeat;
-            background-attachment: scroll;
+            background-repeat: no-repeat;
+            background-position: 50% -45px;
             filter: brightness(83%);
         }
 

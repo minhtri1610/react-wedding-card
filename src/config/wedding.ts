@@ -8,24 +8,28 @@ export const WEDDING_INVITATION = {
   groom: {
     fullName: 'ĐỨC HOÀNG',
     shortName: 'ĐỨC HOÀNG',
-    fatherName: 'Ông. Ngô Văn A',
-    motherName: 'Bà. Phạm Thị Thu B',
+    fatherName: 'Ông. Lương Tấn Ninh',
+    motherName: 'Bà. Đoàn Thị Lan',
+    address: 'Xã Đề Gi - Gia Lai',
+    time: '11 giờ 30',
     bank: {
-      name: 'VPBank',
-      number: '113dfd045547',
-      accountName: 'Ngo Van Minh Tri',
+      name: 'Techcombank',
+      number: '19035753045014',
+      accountName: 'LUONG DUC HOANG',
     }
   },
   bride: {
     fullName: 'THÚY VY',
     shortName: 'THÚY VY',
-    fatherName: 'Ông. Phạm Tiến C',
-    motherName: 'Bà. Nguyễn Thị D',
+    fatherName: 'Ông. Tăng Văn Cẩn',
+    motherName: 'Bà. Tô Thị Thu',
+    address: 'Xã An Lương - Gia Lai',
+    time: '08 giờ 00',
     bank: {
-      name: 'Vietcombank',
-      number: '00710342939389',
-      numberQR: '007103300939389', // The one on line 64
-      accountName: 'Pham Ly Ly',
+      name: 'Techcombank',
+      number: '9347913297',
+      numberQR: '9347913297', // The one on line 64
+      accountName: 'TANG THI THUY VY',
     }
   },
   date: {
@@ -40,20 +44,20 @@ export const WEDDING_INVITATION = {
     calendarMonth: 'July',
   },
   groomLocation: {
-    name: 'Holiday Inn & Suites Saigon Airport',
-    address: '18E Đường Cộng Hòa, P. 4, Q. Tân Bình, TP. HCM',
-    mapLink: 'https://maps.app.goo.gl/EoKsSLhT3woFhtSZ6',
+    name: 'Tổ chức tại tư gia',
+    address: 'Thôn Thái Thuận - Xã Đề Gi - Tỉnh Gia Lai',
+    mapLink: 'https://maps.app.goo.gl/ZHaaXAfVrTRVVzS5A',
   },
   brideLocation: {
-    name: 'Trung tâm Hội nghị Tiệc cưới Gem Center',
-    address: '08 Nguyễn Bỉnh Khiêm, Đa Kao, Quận 1, TP. HCM',
-    mapLink: 'https://maps.app.goo.gl/GemCenterLinkPlaceholder',
+    name: 'Tổ chức tại tư gia',
+    address: 'Thôn Trinh Long Khánh - xã An Lương - Tỉnh Gia Lai',
+    mapLink: 'https://maps.app.goo.gl/zMHwoU3i59vRPxyPA',
   },
   location: {
     name: 'Holiday Inn & Suites Saigon Airport',
     address: 'Địa chỉ: 18E Đường Cộng Hòa, P. 4, Q. Tân Bình, TP. Hồ Chí Minh',
     mapLink: 'https://maps.app.goo.gl/EoKsSLhT3woFhtSZ6',
-    city: 'TP. HCM',
+    city: 'Bình Định',
   },
   googleSheetUrl: 'https://script.google.com/macros/s/AKfycbxF6vrpcKvDmEMbXAS5o6c3wXmMd8ujY9vEe0Iyf3Oqe3BBHYeBwmz9GCjlkvhr-JkS/exec'
 };

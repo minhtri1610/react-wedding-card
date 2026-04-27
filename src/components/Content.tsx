@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from 'react';
+import { Suspense, lazy } from 'react';
 import useLadiLazyload from '../hooks/useLadiLazyload';
 import useLadiAnimation from '../hooks/useLadiAnimation';
 import LazyLoadSection from './LazyLoadSection';

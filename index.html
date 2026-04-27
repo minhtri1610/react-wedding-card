@@ -1,14 +1,15 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="js-enabled">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>wedding-card</title>
+    <title>Đức Hoàng & Thúy Vy - Wedding Card</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,regular&display=swap" rel="stylesheet" type="text/css">
     <style id="style_ladi_animation">
-      /* Mặc định ẩn các phần tử để tránh bị nháy nội dung trước khi hiệu ứng chạy */
-      .ladi-element:not(.ladi-animation) {
+      /* Mặc định ẩn các phần tử để tránh bị nháy nội dung trước khi hiệu ứng chạy. 
+         Chỉ áp dụng khi có class 'js-enabled' trên html để tránh bị trắng trang nếu JS bị lỗi. */
+      .js-enabled .ladi-element:not(.ladi-animation) {
         opacity: 0;
       }
       /* Khi có class ladi-animation, cho phép hiển thị. 
