@@ -1,6 +1,7 @@
 import { Suspense, lazy } from 'react';
 import useLadiLazyload from '../hooks/useLadiLazyload';
 import useLadiAnimation from '../hooks/useLadiAnimation';
+import useAutoScroll from '../hooks/useAutoScroll';
 import LazyLoadSection from './LazyLoadSection';
 
 const Section1 = lazy(() => import('./Sections/Section1'));
@@ -17,6 +18,7 @@ const SectionPopup = lazy(() => import('./Sections/SectionPopup'));
 export default function Content() {
     useLadiLazyload();
     useLadiAnimation();
+    useAutoScroll();
 
     return (
         <div className='ladi-wraper'>

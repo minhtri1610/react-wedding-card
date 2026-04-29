@@ -29,19 +29,23 @@ export function useMusic() {
     return timer;
   };
 
-  const playMusic = useCallback(() => {
+  const playMusic = useCallback(async () => {
     const audio = document.getElementById('bg-music') as HTMLAudioElement | null;
-    if (!audio) return;
+    if (!audio) return false;
 
     if (audio.paused) {
       audio.volume = 0;
-      audio.play().then(() => {
+      try {
+        await audio.play();
         setIsPlaying(true);
         fade(audio, 1);
-      }).catch((err) => {
+        return true;
+      } catch (err) {
         console.warn('Autoplay blocked:', err);
-      });
+        return false;
+      }
     }
+    return true;
   }, []);
 
   const stopMusic = useCallback(() => {

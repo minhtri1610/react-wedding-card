@@ -8,21 +8,23 @@ function App() {
   const { playMusic } = useMusic();
 
   useEffect(() => {
-    const handleGlobalClick = () => {
+    const handleGlobalClick = async () => {
       // Browser policies often block autoplay until the user interacts with the page.
       // This will attempt to play music on the first click anywhere.
-      playMusic();
-      // Remove listener after first interaction
-      window.removeEventListener('click', handleGlobalClick);
-      window.removeEventListener('touchstart', handleGlobalClick);
+      const success = await playMusic();
+      // Remove listener after first interaction if successful
+      if (success) {
+        window.removeEventListener('click', handleGlobalClick);
+        window.removeEventListener('touchend', handleGlobalClick);
+      }
     };
 
     window.addEventListener('click', handleGlobalClick);
-    window.addEventListener('touchstart', handleGlobalClick);
+    window.addEventListener('touchend', handleGlobalClick);
 
     return () => {
       window.removeEventListener('click', handleGlobalClick);
-      window.removeEventListener('touchstart', handleGlobalClick);
+      window.removeEventListener('touchend', handleGlobalClick);
     };
   }, [playMusic]);
 
