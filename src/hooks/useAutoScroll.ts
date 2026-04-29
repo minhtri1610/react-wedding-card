@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 export default function useAutoScroll() {
     useEffect(() => {
-        let scrollInterval: NodeJS.Timeout;
+        let scrollInterval: ReturnType<typeof setInterval>;
         
         const autoScroll = () => {
             // Adjust speed here: scroll 2px every 20ms

@@ -180,12 +180,15 @@ export default function Section3() {
         <div id="HEADLINE26" className="ladi-element">
           <h3 className="ladi-headline">{WEDDING_INVITATION.date.lunarDate}</h3>{" "}
         </div>
-        <div id="HEADLINE27" className="ladi-element">
-          <h3 className="ladi-headline">Địa điểm</h3>{" "}
-        </div>
+
+        {type && (
+          <div id="HEADLINE27" className="ladi-element">
+            <h3 className="ladi-headline">Địa điểm</h3>{" "}
+          </div>
+        )}
         
         {/* Nhà Trai */}
-        {(!type || type === 'groom') && (
+        {(type || type === 'groom') && (
           <>
             <div id="HEADLINE28" className="ladi-element" style={{ top: '828px' }}>
               <h3 className="ladi-headline ladi-transition" style={{ fontSize: '16px', lineHeight: '1.6' }}>
@@ -211,7 +214,7 @@ export default function Section3() {
         )}
 
         {/* Nhà Gái */}
-        {(!type || type === 'bride') && (
+        {(type || type === 'bride') && (
           <>
             <div className="ladi-element" style={{ top: type === 'bride' ? '828px' : '998px', width: '473px', left: '-26.625px' }}>
               <h3 className="ladi-headline ladi-transition" style={{ fontSize: '16px', textAlign: 'center', color: 'rgb(56, 81, 31)', textTransform: 'uppercase', fontFamily: 'TESQSSRUdVTEFSLlRURg', lineHeight: '1.6' }}>
